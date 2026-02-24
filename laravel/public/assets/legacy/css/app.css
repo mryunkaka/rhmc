@@ -1,0 +1,420 @@
+/* =========================================================
+   EMS APP.CSS — FOUNDATION & VARIABLES
+   ========================================================= */
+/* 
+   FUNGSI FILE INI:
+   - CSS Reset & Normalization
+   - Root Theme Variables (Colors, Gradients, Surfaces)
+   - Base Typography Styles
+   - Global Utility Classes
+   - Scrollbar Styling
+   - Global Animations
+   ========================================================= */
+
+/* =========================================================
+   CSS RESET
+   ========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   ROOT THEME VARIABLES
+   ========================================================= */
+:root {
+  /* Background Gradient */
+  --ml-bg-start: #0c4a6e;
+  --ml-bg-mid: #075985;
+  --ml-bg-end: #0369a1;
+
+  /* Primary Theme */
+  --ml-primary: #0ea5e9;
+  --ml-primary-700: #0284c7;
+  --ml-accent: #06b6d4;
+
+  /* Semantic Colors */
+  --ml-success: #10b981;
+  --ml-warning: #f59e0b;
+  --ml-danger: #ef4444;
+
+  /* Surface / Glass */
+  --ml-surface: rgba(255, 255, 255, 0.92);
+  --ml-surface-soft: rgba(255, 255, 255, 0.85);
+  --ml-border: rgba(14, 165, 233, 0.35);
+
+  /* Text */
+  --ml-text-main: #0f172a;
+  --ml-text-muted: #64748b;
+}
+
+/* =========================================================
+   BODY BASE
+   ========================================================= */
+body {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ml-text-main);
+  background: linear-gradient(180deg,
+      var(--ml-bg-start),
+      var(--ml-bg-mid),
+      var(--ml-bg-end));
+  min-height: 100vh;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+h1 {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+p {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: var(--ml-text-muted);
+}
+
+small {
+  font-size: 12px;
+  color: var(--ml-text-muted);
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+a {
+  color: var(--ml-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--ml-primary-700);
+  text-decoration: underline;
+}
+
+/* =========================================================
+   UTILITY CLASSES
+   ========================================================= */
+.glass-effect {
+  background: var(--ml-surface);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--ml-border);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--ml-primary), var(--ml-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.text-muted {
+  color: var(--ml-text-muted);
+  font-size: 13px;
+}
+
+.small {
+  font-size: 12px;
+  color: var(--ml-text-muted);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(14, 165, 233, 0.45);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(14, 165, 233, 0.65);
+}
+
+/* =========================================================
+   TABLE RESET
+   ========================================================= */
+table {
+  border-spacing: 0;
+}
+
+th {
+  text-align: left;
+}
+
+/* =========================================================
+   FORM BASE
+   ========================================================= */
+input,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+@keyframes subtle-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.subtle-float {
+  animation: subtle-float 6s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-dot {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* =========================================================
+   SVG & ICON UTILITIES (FIX LARGE HEROICONS)
+   ========================================================= */
+svg {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Force sizes for Tailwind-style classes */
+.w-3,
+svg.w-3 {
+  width: 12px !important;
+}
+
+.h-3,
+svg.h-3 {
+  height: 12px !important;
+}
+
+.w-4,
+svg.w-4 {
+  width: 16px !important;
+}
+
+.h-4,
+svg.h-4 {
+  height: 16px !important;
+}
+
+.w-5,
+svg.w-5 {
+  width: 20px !important;
+}
+
+.h-5,
+svg.h-5 {
+  height: 20px !important;
+}
+
+.w-6,
+svg.w-6 {
+  width: 24px !important;
+}
+
+.h-6,
+svg.h-6 {
+  height: 24px !important;
+}
+
+.w-8,
+svg.w-8 {
+  width: 32px !important;
+}
+
+.h-8,
+svg.h-8 {
+  height: 32px !important;
+}
+
+.w-10,
+svg.w-10 {
+  width: 40px !important;
+}
+
+.h-10,
+svg.h-10 {
+  height: 40px !important;
+}
+
+.w-12,
+svg.w-12 {
+  width: 48px !important;
+}
+
+.h-12,
+svg.h-12 {
+  height: 48px !important;
+}
+
+.w-16,
+svg.w-16 {
+  width: 64px !important;
+}
+
+.h-16,
+svg.h-16 {
+  height: 64px !important;
+}
+
+.w-20,
+svg.w-20 {
+  width: 80px !important;
+}
+
+.h-20,
+svg.h-20 {
+  height: 80px !important;
+}
+
+.w-full,
+svg.w-full {
+  width: 100% !important;
+}
+
+.h-full,
+svg.h-full {
+  height: 100% !important;
+}
+
+svg.inline {
+  display: inline-block !important;
+  vertical-align: middle;
+  margin-top: -3px;
+}
+
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-gray-400 {
+  color: #9ca3af !important;
+}
+
+.text-gray-500 {
+  color: #6b7280 !important;
+}
+
+.text-yellow-500 {
+  color: #f59e0b !important;
+}
+
+.text-red-500 {
+  color: #ef4444 !important;
+}
+
+.text-blue-500 {
+  color: #3b82f6 !important;
+}
+
+.text-green-500 {
+  color: #10b981 !important;
+}

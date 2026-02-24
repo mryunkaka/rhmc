@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd D:/Project/Web/rhmc/laravel && composer dump-autoload 2>&1)",
+      "Bash(cd:*)",
+      "Bash(tail:*)"
+    ]
+  }
+}
